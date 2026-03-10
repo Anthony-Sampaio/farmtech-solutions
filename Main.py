@@ -21,16 +21,19 @@ while True:
             if plantio == "1":
                 largura = float(input("Largura do terreno: "))
                 comprimento = float(input("Comprimento do terreno: "))
-                produto = input("Tipo de ensumo disponível: ")
-                qproduto = float(input("Quantidade de ensumo disponível: "))
+                produto = input("Tipo de produto disponível: ")
+                qproduto = float(input("Quantidade de produto disponível: "))
                 
-
+                area = largura * comprimento
+                insumo = qproduto * area
 
                 soja.append({
                 "Largura":largura,
                 "Comprimento": comprimento,
-                "Tipo do Ensumo": produto,
-                "Quantidade de Ensumo": qproduto,
+                "Tipo do produto": produto,
+                "Quantidade de produto": qproduto,
+                "Área de plantio": area,
+                "Insumo": insumo,
                 })
                 print("Lavoura cadastrada com sucesso!")
                 
@@ -39,16 +42,22 @@ while True:
                 largura = float(input("Largura do terreno: "))
                 comprimento = float(input("Comprimento do terreno: "))
                 espacamento = float(input("Espaçamento das ruas: "))
-                produto = input("Tipo de ensumo disponível: ")
-                qproduto = float(input("Quantidade de ensumo disponível: "))
-                
+                produto = input("Tipo de produto disponível: ")
+                qproduto = float(input("Quantidade de produto disponível: "))
+
+                area = largura * comprimento
+                nruas = largura / espacamento
+                insumo = qproduto * comprimento * nruas
 
                 cafe.append({
                 "Largura":largura,
                 "Comprimento": comprimento,
                 "Espaçamento": espacamento,
-                "Tipo do Ensumo": produto,
-                "Quantidade de Ensumo": qproduto,
+                "Tipo do Produto": produto,
+                "Quantidade de Produto": qproduto,
+                "Área de plantio": area,
+                "Número de ruas": nruas,
+                "Insumo": insumo,
                 })
                 print("Lavoura cadastrada com sucesso!")
                 
