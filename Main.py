@@ -1,4 +1,8 @@
 print("Olá, vou te ajudar com a lavoura!")
+
+soja = []
+cafe = []
+
 while True:
     print("=== FarmTech Solutions ===")
     print("1 - Cadastrar lavoura")
@@ -9,21 +13,46 @@ while True:
     escolha = input("Escolha uma opção: ")
 
     if escolha == "1":
-        print("Em construção...")
-
-    elif escolha == "2":
-        print("Em construção...")
-
-    elif escolha == "3":
-        print("Em construção...")
-
-    elif escolha == "4":
-        print("Em construção...")
-
-    elif escolha == "5":
-        print("Encerrando o programa...")
-        break
+            print("1 - Soja")
+            print("2 - Café")
+            plantio = input("O que você pretende plantar? ")
 
 
-    else:
-        print("Resposta inválida")
+            if plantio == "1":
+                largura = float(input("Largura do terreno: "))
+                comprimento = float(input("Comprimento do terreno: "))
+                produto = input("Tipo de ensumo disponível: ")
+                qproduto = float(input("Quantidade de ensumo disponível: "))
+                
+
+
+                soja.append({
+                "Largura":largura,
+                "Comprimento": comprimento,
+                "Tipo do Ensumo": produto,
+                "Quantidade de Ensumo": qproduto,
+                })
+                print("Lavoura cadastrada com sucesso!")
+                
+
+            elif plantio == "2":
+                largura = float(input("Largura do terreno: "))
+                comprimento = float(input("Comprimento do terreno: "))
+                espacamento = float(input("Espaçamento das ruas: "))
+                produto = input("Tipo de ensumo disponível: ")
+                qproduto = float(input("Quantidade de ensumo disponível: "))
+                
+
+                cafe.append({
+                "Largura":largura,
+                "Comprimento": comprimento,
+                "Espaçamento": espacamento,
+                "Tipo do Ensumo": produto,
+                "Quantidade de Ensumo": qproduto,
+                })
+                print("Lavoura cadastrada com sucesso!")
+                
+
+            else:
+                print("Resposta inválida.")
+            
