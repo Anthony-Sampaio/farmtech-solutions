@@ -19,11 +19,26 @@ while True:
 
 
             if plantio == "1":
-                largura = float(input("Largura do terreno: "))
-                comprimento = float(input("Comprimento do terreno: "))
+                while True:
+                    try:
+                        largura = float(input("Largura do terreno: "))
+                        break
+                    except ValueError:
+                        print("Digite apenas números, sem unidades de medida!")
+                while True:
+                    try:
+                        comprimento = float(input("Comprimento do terreno: "))
+                        break
+                    except ValueError:
+                        print("Digite apenas números, sem unidades de medida!")
                 produto = input("Tipo de produto disponível: ")
-                qproduto = float(input("Quantidade de produto disponível: "))
-                
+                while True:
+                    try:
+                        qproduto = float(input("Quantidade de produto disponível: "))
+                        break
+                    except ValueError:
+                        print("Digite apenas números, sem unidades de medida!")
+                    
                 area = largura * comprimento
                 insumo = qproduto * area
 
@@ -36,14 +51,34 @@ while True:
                 "Insumo": insumo,
                 })
                 print("Lavoura cadastrada com sucesso!")
-                
+                    
 
             elif plantio == "2":
-                largura = float(input("Largura do terreno: "))
-                comprimento = float(input("Comprimento do terreno: "))
-                espacamento = float(input("Espaçamento das ruas: "))
+                while True:
+                    try:
+                        largura = float(input("Largura do terreno: "))
+                        break
+                    except ValueError:
+                        print("Digite apenas números, sem unidades de medida!")
+                while True:
+                    try:
+                        comprimento = float(input("Comprimento do terreno: "))
+                        break
+                    except ValueError:
+                        print("Digite apenas números, sem unidades de medida!")
+                while True:
+                    try:
+                        espacamento = float(input("Espaçamento das ruas: "))
+                        break
+                    except ValueError:
+                        print("Digite apenas números, sem unidades de medida!")
                 produto = input("Tipo de produto disponível: ")
-                qproduto = float(input("Quantidade de produto disponível: "))
+                while True:
+                    try:
+                        qproduto = float(input("Quantidade de produto disponível: "))
+                        break
+                    except ValueError:
+                        print("Digite apenas números, sem unidades de medida!")
 
                 area = largura * comprimento
                 nruas = largura / espacamento
@@ -64,4 +99,24 @@ while True:
 
             else:
                 print("Resposta inválida.")
-            
+
+
+    elif escolha == "2":
+            print("=== Lavouras de Soja ===")
+            if len(soja) == 0:
+                print("Nenhuma lavoura cadastrada.")
+            else:
+                for i in range(len(soja)):
+                    print(i, soja[i])
+
+            print("=== Lavouras de Café ===")
+            if len(cafe) == 0:
+                print("Nenhuma lavoura cadastrada.")
+            else:
+                for i in range(len(cafe)):
+                    print(i, cafe[i])
+
+            input("Pressione Enter para voltar...")
+
+    elif escolha == "3":
+        print("Você quer atualizar soja ou café??")
