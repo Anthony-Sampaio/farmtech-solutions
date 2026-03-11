@@ -39,8 +39,8 @@ while True:
                     except ValueError:
                         print("Digite apenas números, sem unidades de medida!")
                     
-                area = largura * comprimento
-                insumo = qproduto * area
+                area = round(largura * comprimento, 2)
+                insumo = round(qproduto * area, 2)
 
                 soja.append({
                 "Largura":largura,
@@ -80,9 +80,9 @@ while True:
                     except ValueError:
                         print("Digite apenas números, sem unidades de medida!")
 
-                area = largura * comprimento
-                nruas = largura / espacamento
-                insumo = qproduto * comprimento * nruas
+                area = round(largura * comprimento, 2)
+                nruas = round(largura / espacamento, 2)
+                insumo = round(qproduto * comprimento * nruas, 2)
 
                 cafe.append({
                 "Largura":largura,
@@ -100,21 +100,26 @@ while True:
             else:
                 print("Resposta inválida.")
 
-
     elif escolha == "2":
             print("=== Lavouras de Soja ===")
             if len(soja) == 0:
                 print("Nenhuma lavoura cadastrada.")
             else:
                 for i in range(len(soja)):
-                    print(i, soja[i])
+                    print(f"====Lavoura {i}====")
+                    for chave, valor in soja[i].items():
+                        print(f"{chave}: {valor}")
+                    print()
 
             print("=== Lavouras de Café ===")
             if len(cafe) == 0:
                 print("Nenhuma lavoura cadastrada.")
             else:
                 for i in range(len(cafe)):
-                    print(i, cafe[i])
+                    print(f"====Lavoura {i}====")
+                    for chave, valor in cafe[i].items():
+                        print(f"{chave}: {valor}")
+                    print()
 
             input("Pressione Enter para voltar...")
 
