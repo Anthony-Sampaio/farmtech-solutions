@@ -207,3 +207,31 @@ while True:
                         except ValueError:
                             print("Digite apenas números!")
                 print("Lavoura atualizada com sucesso!")
+
+    elif escolha ==  "4":
+        print("Qual tipo de lavoura deseja deletar?")
+        print("1 - Soja")
+        print("2 - Café")
+        deletar = input("Digite um número: ")
+
+        if deletar == "1":
+            print("=== Lavouras de Soja ===")
+            if len(soja) == 0:
+                print("Nenhuma lavoura cadastrada.")
+            else:
+                for i in range(len(soja)):
+                    print(i, soja[i])
+                lavoura = int(input("Escolha uma lavoura para deletar: "))
+                soja.pop(lavoura)
+                print("Lavoura deletada com sucesso!")
+
+        elif deletar == "2":
+            print("=== Lavouras de Café ===")
+            if len(cafe) == 0:
+                print("Nenhuma lavoura cadastrada.")
+            else:
+                for i in range(len(cafe)):
+                    print(i, cafe[i])
+                lavoura = int(input("Escolha uma lavoura para deletar: "))
+                cafe.pop(lavoura)
+                print("Lavoura deletada com sucesso!")
