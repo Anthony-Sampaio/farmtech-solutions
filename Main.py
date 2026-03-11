@@ -119,4 +119,91 @@ while True:
             input("Pressione Enter para voltar...")
 
     elif escolha == "3":
-        print("Você quer atualizar soja ou café??")
+        print("Você quer atualizar soja ou café?")
+        print("1 - Soja")
+        print("2 - Café")
+        atualizacao = input("Digite um número: ")
+
+        if atualizacao == "1":
+            print("=== Lavouras de Soja ===")
+            if len(soja) == 0:
+                print("Nenhuma lavoura cadastrada.")
+            else:
+                for i in range(len(soja)):
+                    print(i, soja[i])
+                lavoura = int(input("Escolha uma lavoura: "))
+                print("1 - Largura")
+                print("2 - Comprimento")
+                print("3 - Tipo do produto")
+                print("4 - Quantidade de produto")
+                campo = input("Escolha: ")
+                if campo == "1":
+                    while True:
+                        try:
+                            soja[lavoura]["Largura"] = float(input("Nova largura: "))
+                            break
+                        except ValueError:
+                            print("Digite apenas números!")
+                elif campo == "2":
+                    while True:
+                        try:
+                            soja[lavoura]["Comprimento"] = float(input("Novo comprimento: "))
+                            break
+                        except ValueError:
+                            print("Digite apenas números!")
+                elif campo == "3":
+                    soja[lavoura]["Tipo do produto"] = input("Novo produto: ")
+                elif campo == "4":
+                    while True:
+                        try:
+                            soja[lavoura]["Quantidade de produto"] = float(input("Nova quantidade: "))
+                            break
+                        except ValueError:
+                            print("Digite apenas números!")
+                print("Lavoura atualizada com sucesso!")
+
+        elif atualizacao == "2":
+            print("=== Lavouras de Café ===")
+            if len(cafe) == 0:
+                print("Nenhuma lavoura cadastrada.")
+            else:
+                for i in range(len(cafe)):
+                    print(i, cafe[i])
+                lavoura = int(input("Escolha uma lavoura: "))
+                print("1 - Largura")
+                print("2 - Comprimento")
+                print("3 - Espaçamento")
+                print("4 - Tipo do produto")
+                print("5 - Quantidade de produto")
+                campo = input("Escolha: ")
+                if campo == "1":
+                    while True:
+                        try:
+                            cafe[lavoura]["Largura"] = float(input("Nova largura: "))
+                            break
+                        except ValueError:
+                            print("Digite apenas números!")
+                elif campo == "2":
+                    while True:
+                        try:
+                            cafe[lavoura]["Comprimento"] = float(input("Novo comprimento: "))
+                            break
+                        except ValueError:
+                            print("Digite apenas números!")
+                elif campo == "3":
+                    while True:
+                        try:
+                            cafe[lavoura]["Espaçamento"] = float(input("Novo espaçamento: "))
+                            break
+                        except ValueError:
+                            print("Digite apenas números!")
+                elif campo == "4":
+                    cafe[lavoura]["Tipo do Produto"] = input("Novo produto: ")
+                elif campo == "5":
+                    while True:
+                        try:
+                            cafe[lavoura]["Quantidade de Produto"] = float(input("Nova quantidade: "))
+                            break
+                        except ValueError:
+                            print("Digite apenas números!")
+                print("Lavoura atualizada com sucesso!")
