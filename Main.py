@@ -21,20 +21,20 @@ while True:
             if plantio == "1":
                 while True:
                     try:
-                        largura = float(input("Largura do terreno: "))
+                        largura = float(input("Largura do terreno (m): "))
                         break
                     except ValueError:
                         print("Digite apenas números, sem unidades de medida!")
                 while True:
                     try:
-                        comprimento = float(input("Comprimento do terreno: "))
+                        comprimento = float(input("Comprimento do terreno (m): "))
                         break
                     except ValueError:
                         print("Digite apenas números, sem unidades de medida!")
                 produto = input("Tipo de produto disponível: ")
                 while True:
                     try:
-                        qproduto = float(input("Quantidade de produto disponível: "))
+                        qproduto = float(input("Quantidade de produto disponível (L): "))
                         break
                     except ValueError:
                         print("Digite apenas números, sem unidades de medida!")
@@ -56,26 +56,26 @@ while True:
             elif plantio == "2":
                 while True:
                     try:
-                        largura = float(input("Largura do terreno: "))
+                        largura = float(input("Largura do terreno (m): "))
                         break
                     except ValueError:
                         print("Digite apenas números, sem unidades de medida!")
                 while True:
                     try:
-                        comprimento = float(input("Comprimento do terreno: "))
+                        comprimento = float(input("Comprimento do terreno (m): "))
                         break
                     except ValueError:
                         print("Digite apenas números, sem unidades de medida!")
                 while True:
                     try:
-                        espacamento = float(input("Espaçamento das ruas: "))
+                        espacamento = float(input("Espaçamento das ruas (m): "))
                         break
                     except ValueError:
                         print("Digite apenas números, sem unidades de medida!")
                 produto = input("Tipo de produto disponível: ")
                 while True:
                     try:
-                        qproduto = float(input("Quantidade de produto disponível: "))
+                        qproduto = float(input("Quantidade de produto disponível (L): "))
                         break
                     except ValueError:
                         print("Digite apenas números, sem unidades de medida!")
@@ -225,7 +225,10 @@ while True:
                 print("Nenhuma lavoura cadastrada.")
             else:
                 for i in range(len(soja)):
-                    print(i, soja[i])
+                    print(f"====Lavoura {i}====")
+                    for chave, valor in soja[i].items():
+                        print(f"{chave}: {valor}")
+                    print()
                 lavoura = int(input("Escolha uma lavoura para deletar: "))
                 soja.pop(lavoura)
                 print("Lavoura deletada com sucesso!")
@@ -236,7 +239,10 @@ while True:
                 print("Nenhuma lavoura cadastrada.")
             else:
                 for i in range(len(cafe)):
-                    print(i, cafe[i])
+                    print(f"====Lavoura {i}====")
+                    for chave, valor in cafe[i].items():
+                        print(f"{chave}: {valor}")
+                    print()
                 lavoura = int(input("Escolha uma lavoura para deletar: "))
                 cafe.pop(lavoura)
                 print("Lavoura deletada com sucesso!")
